@@ -1,0 +1,15 @@
+Sub find()
+    T = Timer
+    For Each ele In Range("M3:M580")
+        If ele <> "" Then
+        Rows(ele.Row).Select
+        With Selection.Interior
+            .PatternColorIndex = xlAutomatic
+            .Color = 51112
+            .TintAndShade = 0
+            .PatternTintAndShade = 0
+            End With
+        End If
+    Next
+    MsgBox "Spend:" & Timer - T
+End Sub
